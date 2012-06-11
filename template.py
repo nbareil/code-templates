@@ -30,5 +30,5 @@ if __name__ == '__main__':
     loglvl = logging.DEBUG if option.debug else logging.INFO
     logging.basicConfig(level=loglvl,
                         format="%(asctime)s %(name)8s %(levelname)5s: %(message)s")
-    daemonlog = logging.getLogger(sys.argv[0])
+    log = logging.getLogger(sys.argv[0])
 
