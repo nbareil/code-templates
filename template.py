@@ -1,5 +1,10 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 *-*
+#
+# Copyright (C) Nicolas Bareil <nico@chdir.org>
+#
+# This program is published under a GPLv2 license
+
 
 from optparse import OptionParser
 
@@ -7,6 +12,12 @@ import fileinput
 import logging
 import sys
 import os
+
+
+def usage(ret=1):
+    parser.print_help()
+    sys.exit(ret)
+
 
 if __name__ == '__main__':
     parser = OptionParser(usage=u'usage: %prog [options]')
@@ -30,5 +41,5 @@ if __name__ == '__main__':
     loglvl = logging.DEBUG if option.debug else logging.INFO
     logging.basicConfig(level=loglvl,
                         format="%(asctime)s %(name)8s %(levelname)5s: %(message)s")
-    daemonlog = logging.getLogger(sys.argv[0])
+    log = logging.getLogger(sys.argv[0])
 
