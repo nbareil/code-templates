@@ -37,8 +37,8 @@ if __name__ == '__main__':
     else:
         output = sys.stdout
 
-    loglvl = logging.NOTICE if option.verbose else logging.INFO
-    loglvl = logging.DEBUG if option.debug else logging.INFO
+    loglvl = logging.INFO if options.verbose else logging.WARNING
+    loglvl = logging.DEBUG if options.debug else loglvl
     logging.basicConfig(level=loglvl,
                         format="%(asctime)s %(name)8s %(levelname)5s: %(message)s")
     log = logging.getLogger(sys.argv[0])
